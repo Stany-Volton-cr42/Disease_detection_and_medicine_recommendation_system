@@ -4,8 +4,7 @@ import numpy as np
 import pickle
 app = Flask(__name__)
 
-# load Dataset --------------------------------
-
+# Load Dataset=====================================
 precautions = pd.read_csv('./Dataset/precautions_df.csv')
 workout = pd.read_csv('./Dataset/workout_df.csv')
 description = pd.read_csv('./Dataset/description.csv')
@@ -14,7 +13,7 @@ diets = pd.read_csv('./Dataset/diets.csv')
 
 # Loading Model
 
-with open('model/svc.pkl', 'rb') as file:
+with open('./model/svc.pkl', 'rb') as file:
     svc = pickle.load(file)
 
 
@@ -101,7 +100,7 @@ def home():
                                    my_precautions=my_precautions, medications=medications, my_diet=rec_diet,
                                    workout=workout)
 
-    return render_template('index.html')
+    return render_template('./templates/index.html')
 
 
 
@@ -110,19 +109,19 @@ def home():
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('./templates/about.html')
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return render_template('./templates/contact.html')
 
 @app.route('/developer')
 def developer():
-    return render_template('developer.html')
+    return render_template('./templates/developer.html')
 
 @app.route('/blog')
 def blog():
-    return render_template('blog.html')
+    return render_template('./templates/blog.html')
 
 
 # Python main
