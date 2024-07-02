@@ -1,20 +1,16 @@
-# are we in the same file
-# are we in the same file
-# are we in the same file
-
 from flask import Flask,request,render_template
 import pandas as pd
 import numpy as np
 import pickle
 app = Flask(__name__)
 
+# load Dataset --------------------------------
 
-# Load Dataset=====================================
-precautions = pd.read_csv('Dataset/precautions_df.csv')
-workout = pd.read_csv('Dataset/workout_df.csv')
-description = pd.read_csv('Dataset/description.csv')
-medications = pd.read_csv('Dataset/medications.csv')
-diets = pd.read_csv('Dataset/diets.csv')
+precautions = pd.read_csv('./Dataset/precautions_df.csv')
+workout = pd.read_csv('./Dataset/workout_df.csv')
+description = pd.read_csv('./Dataset/description.csv')
+medications = pd.read_csv('./Dataset/medications.csv')
+diets = pd.read_csv('./Dataset/diets.csv')
 
 # Loading Model
 
